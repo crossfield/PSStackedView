@@ -1027,6 +1027,9 @@ enum {
         
         objc_setAssociatedObject(viewController, kPSSVAssociatedBaseViewControllerKey, baseViewController, OBJC_ASSOCIATION_ASSIGN); // associate weak
     }
+
+    // register stack controller
+    objc_setAssociatedObject(viewController, kPSSVAssociatedStackViewControllerKey, self, OBJC_ASSOCIATION_ASSIGN);
     
     [self addChildViewController:viewController];
     PSSVLog(@"pushing with index %d on stack: %@ (animated: %d)", [self.viewControllers count], viewController, animated);    
@@ -1094,9 +1097,6 @@ enum {
     //container.width = viewController.view.width; // sync width (after it may has changed in layoutIfNeeded)
     
     [viewControllers_ addObject:viewController];
-    
-    // register stack controller
-    objc_setAssociatedObject(viewController, kPSSVAssociatedStackViewControllerKey, self, OBJC_ASSOCIATION_ASSIGN);
     
     [self updateViewControllerMasksAndShadow];
     [self displayViewControllerIndexOnRightMost:[self.viewControllers count]-1 animated:animated];
