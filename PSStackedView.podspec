@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/steipete/PSStackedView'
   s.license  = 'MIT'
   s.author   = { 'Peter Steinberger' => 'steipete@gmail.com' }
-  s.source   = { :git => 'https://github.com/steipete/PSStackedView.git', :tag => '1.0' }
+  s.source   = { :git => 'https://github.com/preplay/PSStackedView.git' }
 
   s.requires_arc = true
   s.source_files = 'PSStackedView'
